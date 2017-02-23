@@ -7,7 +7,7 @@ using System;
 
 namespace SKPR.Ships
 { 
-    public class YWing
+    public class Ship
     {
         string Name { get; set; }
         int[] Resources { get; set; }

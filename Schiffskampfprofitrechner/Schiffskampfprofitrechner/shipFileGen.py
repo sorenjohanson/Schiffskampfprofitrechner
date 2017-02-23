@@ -31,8 +31,9 @@ def classFile(fileName, name):
     with open(fileName, "w+") as file:
         file.writelines(class_struct);
 
-# Change dir directly to avoid any confusion
+# Change dir directly to avoid any confusion, and clear of .cs files
 os.chdir("./Ships/")
+clearFolder(os.getcwd())
 
 # We open predefined ShipReadouts, strip all dashes, whitespaces and newlines,
 # .. and create a new .cs file
