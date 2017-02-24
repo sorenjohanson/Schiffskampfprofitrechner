@@ -42,7 +42,6 @@ namespace SKPR
             for (int i = 1; i <= faction.Ships.Count; i++)
             {
                 Label lbl = (Label)FindName(("lblShip" + i));
-                Console.WriteLine("FACTION: " + faction.Name + " SHIP: " + faction.Ships[i - 1].Name);
                 lbl.Content = faction.Ships[i - 1].Name;
             }
         }
