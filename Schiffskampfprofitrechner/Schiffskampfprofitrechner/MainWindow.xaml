@@ -5,8 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SKPR"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="500" Width="600">
     <Grid>
-        
+        <Label x:Name="lblSKPR" Content="Schiffskampfprofitrechner - SKPR" Margin="146,10,146,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="SimSun" FontSize="16"/>
+        <Label x:Name="lblFaction" Content="Fraktion:" HorizontalAlignment="Left" Margin="45,62,0,0" VerticalAlignment="Top" Height="26" Width="60" RenderTransformOrigin="0.5,0"/>
+        <ComboBox x:Name="cBoxFaction" HorizontalAlignment="Left" Margin="105,65,0,0" VerticalAlignment="Top" Width="85" BorderBrush="{x:Null}" SelectionChanged="cBoxFaction_SelectionChanged">
+            <ComboBoxItem Content="Imperium" IsSelected="True" BorderBrush="{x:Null}" Background="White" Foreground="Black"/>
+            <ComboBoxItem Content="Rebellion" BorderBrush="{x:Null}" Background="White" Foreground="Black"/>
+        </ComboBox>
+        <Label x:Name="lblSchiffe" Content="Schiffe" HorizontalAlignment="Left" Margin="80,35,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="lblShip1" Content="" HorizontalAlignment="Left" Margin="105,94,0,0" VerticalAlignment="Top" Width="156"/>
+        <Label x:Name="lblShip2" Content="" HorizontalAlignment="Left" Margin="105,120,0,0" VerticalAlignment="Top" Width="156"/>
+        <Label x:Name="lblShip3" Content="" HorizontalAlignment="Left" Margin="105,146,0,0" VerticalAlignment="Top" Width="156"/>
+        <Label x:Name="lblShip4" Content="" HorizontalAlignment="Left" Margin="105,172,0,0" VerticalAlignment="Top" Width="156"/>
+        <Label x:Name="lblShip5" Content="" HorizontalAlignment="Left" Margin="105,198,0,0" VerticalAlignment="Top" Width="156"/>
+        <Label x:Name="lblShip6" Content="" HorizontalAlignment="Left" Margin="105,224,0,0" VerticalAlignment="Top" Width="156"/>
+        <Label x:Name="lblShip7" Content="" HorizontalAlignment="Left" Margin="105,250,0,0" VerticalAlignment="Top" Width="156"/>
+        <Label x:Name="lblShip8" Content="" HorizontalAlignment="Left" Margin="105,276,0,0" VerticalAlignment="Top" Width="156"/>
+        <Label x:Name="lblShip9" Content="" HorizontalAlignment="Left" Margin="105,302,0,0" VerticalAlignment="Top" Width="156"/>
+        <Label x:Name="lblShip10" Content="" HorizontalAlignment="Left" Margin="105,328,0,0" VerticalAlignment="Top" Width="156"/>
+        <Label x:Name="lblShip11" Content="" HorizontalAlignment="Left" Margin="105,354,0,0" VerticalAlignment="Top" Width="156"/>
+        <Label x:Name="lblShip12" Content="" HorizontalAlignment="Left" Margin="105,380,0,0" VerticalAlignment="Top" Width="156"/>
+        <Label x:Name="lblShip13" Content="" HorizontalAlignment="Left" Margin="105,406,0,0" VerticalAlignment="Top" Width="156"/>
+        <TextBox x:Name="txtShip1" HorizontalAlignment="Left" Height="22" Margin="45,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right"/>
+        <TextBox x:Name="txtShip2" HorizontalAlignment="Left" Height="22" Margin="45,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right"/>
+        <TextBox x:Name="txtShip3" HorizontalAlignment="Left" Height="22" Margin="45,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right"/>
+        <TextBox x:Name="txtShip4" HorizontalAlignment="Left" Height="22" Margin="45,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right"/>
+        <TextBox x:Name="txtShip5" HorizontalAlignment="Left" Height="22" Margin="45,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right"/>
+        <TextBox x:Name="txtShip6" HorizontalAlignment="Left" Height="22" Margin="45,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right"/>
+        <TextBox x:Name="txtShip7" HorizontalAlignment="Left" Height="22" Margin="45,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right"/>
+        <TextBox x:Name="txtShip8" HorizontalAlignment="Left" Height="22" Margin="45,278,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right"/>
+        <TextBox x:Name="txtShip9" HorizontalAlignment="Left" Height="22" Margin="45,304,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right"/>
+        <TextBox x:Name="txtShip10" HorizontalAlignment="Left" Height="22" Margin="45,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right"/>
+        <TextBox x:Name="txtShip11" HorizontalAlignment="Left" Height="22" Margin="45,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right"/>
+        <TextBox x:Name="txtShip12" HorizontalAlignment="Left" Height="22" Margin="45,382,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right"/>
+        <TextBox x:Name="txtShip13" HorizontalAlignment="Left" Height="22" Margin="45,408,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right"/>
     </Grid>
 </Window>
