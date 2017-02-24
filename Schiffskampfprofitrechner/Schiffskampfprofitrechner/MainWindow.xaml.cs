@@ -12,6 +12,9 @@ namespace SKPR
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Faction Imperium = new Faction("Imperium");
+        private Faction Rebellion = new Faction("Rebellion");
+
         public void InitializeFaction(Faction faction)
         {
             string line;
@@ -34,20 +37,39 @@ namespace SKPR
             faction.Ships.AddRange(allShips);
         }
 
+        public void UpdateText(Faction faction)
+        {
+            for (int i = 1; i <= faction.Ships.Count; i++)
+            {
+                Label lbl = (Label)FindName(("lblShip" + i));
+                Console.WriteLine("FACTION: " + faction.Name + " SHIP: " + faction.Ships[i - 1].Name);
+                lbl.Content = faction.Ships[i - 1].Name;
+            }
+        }
+
+        public Faction ReturnFaction(string faction)
+        {
+            switch (faction)
+            {
+                // SelectedItem.ToString() for ComboBox returns Control Type + actual Item. I'm too lazy to strip.
+                case "System.Windows.Controls.ComboBoxItem: Imperium":
+                    return Imperium;
+                case "System.Windows.Controls.ComboBoxItem: Rebellion":
+                    return Rebellion;
+            }
+            return Imperium;
+        }
+
         public MainWindow()
         {
             InitializeComponent();
+            InitializeFaction(Imperium);
+            InitializeFaction(Rebellion);
         }
 
         private void cBoxFaction_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            Faction curFaction = new Faction(cBoxFaction.Text);
-            InitializeFaction(curFaction);
-            for (int i = 1; i < curFaction.Ships.Count; i++)
-            {
-                Label lbl = (Label)FindName(("lblShip" + i));
-                lbl.Content = curFaction.Ships[i].Name;
-            }
+            UpdateText(ReturnFaction(cBoxFaction.SelectedItem.ToString()));
         }
     }
 }

@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SKPR"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="600">
+        Title="MainWindow" Height="530" Width="600">
     <Grid>
         <Label x:Name="lblSKPR" Content="Schiffskampfprofitrechner - SKPR" Margin="146,10,146,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="SimSun" FontSize="16"/>
         <Label x:Name="lblFaction" Content="Fraktion:" HorizontalAlignment="Left" Margin="45,62,0,0" VerticalAlignment="Top" Height="26" Width="60" RenderTransformOrigin="0.5,0"/>
         <ComboBox x:Name="cBoxFaction" HorizontalAlignment="Left" Margin="105,65,0,0" VerticalAlignment="Top" Width="85" BorderBrush="{x:Null}" SelectionChanged="cBoxFaction_SelectionChanged">
-            <ComboBoxItem Content="Imperium" IsSelected="True" BorderBrush="{x:Null}" Background="White" Foreground="Black"/>
             <ComboBoxItem Content="Rebellion" BorderBrush="{x:Null}" Background="White" Foreground="Black"/>
+            <ComboBoxItem Content="Imperium" BorderBrush="{x:Null}" Background="White" Foreground="Black"/>
         </ComboBox>
         <Label x:Name="lblSchiffe" Content="Schiffe" HorizontalAlignment="Left" Margin="80,35,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label x:Name="lblShip1" Content="" HorizontalAlignment="Left" Margin="105,94,0,0" VerticalAlignment="Top" Width="156"/>
@@ -40,5 +40,7 @@
         <TextBox x:Name="txtShip11" HorizontalAlignment="Left" Height="22" Margin="45,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right"/>
         <TextBox x:Name="txtShip12" HorizontalAlignment="Left" Height="22" Margin="45,382,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right"/>
         <TextBox x:Name="txtShip13" HorizontalAlignment="Left" Height="22" Margin="45,408,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right"/>
+        <Label x:Name="lblShip14" Content="" HorizontalAlignment="Left" Margin="105,432,0,0" VerticalAlignment="Top" Width="156"/>
+        <TextBox x:Name="txtShip14" HorizontalAlignment="Left" Height="22" Margin="45,434,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right"/>
     </Grid>
 </Window>
