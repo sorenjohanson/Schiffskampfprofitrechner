@@ -101,7 +101,13 @@ namespace SKPR
             {
                 // Find TextBox and the amount.
                 TextBox shipBox = (TextBox)FindName(("txtShip" + (i + 1)));
-                int shipAmount = int.Parse(shipBox.Text);
+                int shipAmount = 0;
+                bool errHandler = int.TryParse(shipBox.Text, out shipAmount);
+                if (!errHandler)
+                {
+                    MessageBox.Show("Schiffsanzahl konnte nicht konvertiert werden!", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                    break;
+                }
                 //Console.WriteLine("Amount: " + shipAmount.ToString());
                 if (shipAmount > 0)
                 {
