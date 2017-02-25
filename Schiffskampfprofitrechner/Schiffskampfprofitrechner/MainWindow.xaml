@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SKPR"
         mc:Ignorable="d"
-        Title="MainWindow" Height="530" Width="531.5" ResizeMode="CanMinimize">
+        Title="Schiffskampfprofitrechner" Height="530" Width="531.5" IsTabStop="False" ResizeMode="CanMinimize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="137*"/>
@@ -31,40 +31,50 @@
         <Label x:Name="lblShip11" Content="" HorizontalAlignment="Left" Margin="105,354,0,0" VerticalAlignment="Top" Width="170" Grid.ColumnSpan="2"/>
         <Label x:Name="lblShip12" Content="" HorizontalAlignment="Left" Margin="105,380,0,0" VerticalAlignment="Top" Width="170" Grid.ColumnSpan="2"/>
         <Label x:Name="lblShip13" Content="" HorizontalAlignment="Left" Margin="105,406,0,0" VerticalAlignment="Top" Width="170" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txtShip1" HorizontalAlignment="Left" Height="22" Margin="45,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False"/>
-        <TextBox x:Name="txtShip2" HorizontalAlignment="Left" Height="22" Margin="45,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False"/>
-        <TextBox x:Name="txtShip3" HorizontalAlignment="Left" Height="22" Margin="45,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False"/>
-        <TextBox x:Name="txtShip4" HorizontalAlignment="Left" Height="22" Margin="45,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False"/>
-        <TextBox x:Name="txtShip5" HorizontalAlignment="Left" Height="22" Margin="45,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False"/>
-        <TextBox x:Name="txtShip6" HorizontalAlignment="Left" Height="22" Margin="45,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False"/>
-        <TextBox x:Name="txtShip7" HorizontalAlignment="Left" Height="22" Margin="45,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False"/>
-        <TextBox x:Name="txtShip8" HorizontalAlignment="Left" Height="22" Margin="45,278,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False"/>
-        <TextBox x:Name="txtShip9" HorizontalAlignment="Left" Height="22" Margin="45,304,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False"/>
-        <TextBox x:Name="txtShip10" HorizontalAlignment="Left" Height="22" Margin="45,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False"/>
-        <TextBox x:Name="txtShip11" HorizontalAlignment="Left" Height="22" Margin="45,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False"/>
-        <TextBox x:Name="txtShip12" HorizontalAlignment="Left" Height="22" Margin="45,382,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False"/>
-        <TextBox x:Name="txtShip13" HorizontalAlignment="Left" Height="22" Margin="45,408,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False"/>
+        <TextBox x:Name="txtShip1" HorizontalAlignment="Left" Height="22" Margin="45,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False" Text="0"/>
+        <TextBox x:Name="txtShip2" HorizontalAlignment="Left" Height="22" Margin="45,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False" Text="0"/>
+        <TextBox x:Name="txtShip3" HorizontalAlignment="Left" Height="22" Margin="45,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False" Text="0"/>
+        <TextBox x:Name="txtShip4" HorizontalAlignment="Left" Height="22" Margin="45,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False" Text="0"/>
+        <TextBox x:Name="txtShip5" HorizontalAlignment="Left" Height="22" Margin="45,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False" Text="0"/>
+        <TextBox x:Name="txtShip6" HorizontalAlignment="Left" Height="22" Margin="45,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False" Text="0"/>
+        <TextBox x:Name="txtShip7" HorizontalAlignment="Left" Height="22" Margin="45,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False" Text="0"/>
+        <TextBox x:Name="txtShip8" HorizontalAlignment="Left" Height="22" Margin="45,278,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False" Text="0"/>
+        <TextBox x:Name="txtShip9" HorizontalAlignment="Left" Height="22" Margin="45,304,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False" Text="0"/>
+        <TextBox x:Name="txtShip10" HorizontalAlignment="Left" Height="22" Margin="45,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False" Text="0"/>
+        <TextBox x:Name="txtShip11" HorizontalAlignment="Left" Height="22" Margin="45,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False" Text="0"/>
+        <TextBox x:Name="txtShip12" HorizontalAlignment="Left" Height="22" Margin="45,382,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False" Text="0"/>
+        <TextBox x:Name="txtShip13" HorizontalAlignment="Left" Height="22" Margin="45,408,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False" Text="0"/>
         <Label x:Name="lblShip14" Content="" HorizontalAlignment="Left" Margin="105,432,0,0" VerticalAlignment="Top" Width="170" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txtShip14" HorizontalAlignment="Left" Height="22" Margin="45,434,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False"/>
+        <TextBox x:Name="txtShip14" HorizontalAlignment="Left" Height="22" Margin="45,434,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" TextAlignment="Right" MaxLines="1" MaxLength="7" IsUndoEnabled="False" Text="0"/>
         <Label x:Name="lblTF" Content="Trümmerfeld" HorizontalAlignment="Left" Margin="71,35,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="1"/>
         <Label x:Name="lblDura" Content="Durastahl" HorizontalAlignment="Left" Margin="11,62,0,0" VerticalAlignment="Top" Grid.Column="1"/>
         <Label x:Name="lblTiba" Content="Tibannagas" HorizontalAlignment="Left" Margin="11,88,0,0" VerticalAlignment="Top" Grid.Column="1"/>
         <Label x:Name="lblKris" Content="Kristall" HorizontalAlignment="Left" Margin="11,114,0,0" VerticalAlignment="Top" Grid.Column="1"/>
         <Label x:Name="lblEZ" Content="Energiezellen" HorizontalAlignment="Left" Margin="11,140,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <TextBox x:Name="txtDuraAmount" HorizontalAlignment="Left" Height="23" Margin="96,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AllowDrop="False" MaxLines="1" Grid.Column="1" MaxLength="9"/>
-        <TextBox x:Name="txtTibaAmount" HorizontalAlignment="Left" Height="23" Margin="96,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AllowDrop="False" MaxLines="1" Grid.Column="1" MaxLength="9"/>
-        <TextBox x:Name="txtKrisAmount" HorizontalAlignment="Left" Height="23" Margin="96,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AllowDrop="False" MaxLines="1" Grid.Column="1" MaxLength="9"/>
-        <TextBox x:Name="txtEZAmount" HorizontalAlignment="Left" Height="23" Margin="96,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AllowDrop="False" MaxLines="1" Grid.Column="1" MaxLength="9"/>
-        <Label x:Name="lblRes" Content="Ressourcen" HorizontalAlignment="Left" Margin="82,172,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="1"/>
+        <TextBox x:Name="TFDura" HorizontalAlignment="Left" Height="23" Margin="96,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AllowDrop="False" MaxLines="1" Grid.Column="1" MaxLength="9" Text="0"/>
+        <TextBox x:Name="TFTiba" HorizontalAlignment="Left" Height="23" Margin="96,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AllowDrop="False" MaxLines="1" Grid.Column="1" MaxLength="9" Text="0"/>
+        <TextBox x:Name="TFKris" HorizontalAlignment="Left" Height="23" Margin="96,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AllowDrop="False" MaxLines="1" Grid.Column="1" MaxLength="9" Text="0"/>
+        <TextBox x:Name="TFEZ" HorizontalAlignment="Left" Height="23" Margin="96,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AllowDrop="False" MaxLines="1" Grid.Column="1" MaxLength="9" Text="0"/>
+        <Label x:Name="lblRes" Content="Ressourcen" HorizontalAlignment="Left" Margin="80,172,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="1"/>
         <Label x:Name="lblDura_Copy" Content="Durastahl" HorizontalAlignment="Left" Margin="11,198,0,0" VerticalAlignment="Top" Grid.Column="1"/>
         <Label x:Name="lblTiba_Copy" Content="Tibannagas" HorizontalAlignment="Left" Margin="11,222,0,0" VerticalAlignment="Top" Grid.Column="1"/>
         <Label x:Name="lblKris_Copy" Content="Kristall" HorizontalAlignment="Left" Margin="11,248,0,0" VerticalAlignment="Top" Grid.Column="1"/>
         <Label x:Name="lblEZ_Copy" Content="Energiezellen" HorizontalAlignment="Left" Margin="11,273,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <TextBox x:Name="txtDuraRes" HorizontalAlignment="Left" Height="23" Margin="96,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AllowDrop="False" MaxLines="1" Grid.Column="1" MaxLength="9"/>
-        <TextBox x:Name="txtTibaRes" HorizontalAlignment="Left" Height="23" Margin="96,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AllowDrop="False" MaxLines="1" Grid.Column="1" MaxLength="9"/>
-        <TextBox x:Name="txtKrisRes" HorizontalAlignment="Left" Height="22" Margin="96,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AllowDrop="False" MaxLines="1" Grid.Column="1" MaxLength="9"/>
-        <TextBox x:Name="txtKrisRes_Copy" HorizontalAlignment="Left" Height="22" Margin="96,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AllowDrop="False" MaxLines="1" Grid.Column="1" MaxLength="9"/>
+        <TextBox x:Name="ResDura" HorizontalAlignment="Left" Height="23" Margin="96,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AllowDrop="False" MaxLines="1" Grid.Column="1" MaxLength="9" Text="0"/>
+        <TextBox x:Name="ResTiba" HorizontalAlignment="Left" Height="23" Margin="96,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AllowDrop="False" MaxLines="1" Grid.Column="1" MaxLength="9" Text="0"/>
+        <TextBox x:Name="ResKris" HorizontalAlignment="Left" Height="22" Margin="96,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AllowDrop="False" MaxLines="1" Grid.Column="1" MaxLength="9" Text="0"/>
+        <TextBox x:Name="ResEZ" HorizontalAlignment="Left" Height="22" Margin="96,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AllowDrop="False" MaxLines="1" Grid.Column="1" MaxLength="9" Text="0"/>
         <Button x:Name="btnBerechnen" Content="Berechnen" Grid.Column="1" HorizontalAlignment="Left" Margin="71,313,0,0" VerticalAlignment="Top" Width="105" Click="btnBerechnen_Click" IsDefault="True" Cursor="Hand"/>
         <Label x:Name="lblProfit" Content="Profit wird berechnet.." Grid.Column="1" HorizontalAlignment="Left" Margin="61,388,0,0" VerticalAlignment="Top" IsEnabled="False" Visibility="Hidden"/>
+        <Label x:Name="lblDuraWin" Content="Durastahl" Grid.Column="1" HorizontalAlignment="Left" Margin="11,354,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="lblTibaWin" Content="Tibannagas" Grid.Column="1" HorizontalAlignment="Left" Margin="11,380,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="lblKrisWin" Content="Kristall" Grid.Column="1" HorizontalAlignment="Left" Margin="11,404,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="lblCredsWin" Content="Credits" Grid.Column="1" HorizontalAlignment="Left" Margin="11,430,0,0" VerticalAlignment="Top" Visibility="Hidden" />
+        <TextBox x:Name="DuraWin" HorizontalAlignment="Left" Height="22" Margin="96,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AllowDrop="False" MaxLines="1" Grid.Column="1" MaxLength="9" BorderBrush="{x:Null}" TextAlignment="Right" SelectionOpacity="0" IsTabStop="False" IsUndoEnabled="False" IsReadOnly="True" />
+        <TextBox x:Name="TibaWin" HorizontalAlignment="Left" Height="22" Margin="96,381,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AllowDrop="False" MaxLines="1" Grid.Column="1" MaxLength="9" BorderBrush="{x:Null}" TextAlignment="Right" SelectionOpacity="0" IsTabStop="False" IsUndoEnabled="False" IsReadOnly="True" />
+        <TextBox x:Name="KrisWin" HorizontalAlignment="Left" Height="22" Margin="96,406,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AllowDrop="False" MaxLines="1" Grid.Column="1" MaxLength="9" BorderBrush="{x:Null}" TextAlignment="Right" SelectionOpacity="0" IsTabStop="False" IsUndoEnabled="False" IsReadOnly="True"/>
+        <TextBox x:Name="CredsWin" HorizontalAlignment="Left" Height="22" Margin="96,432,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AllowDrop="False" MaxLines="1" Grid.Column="1" MaxLength="9" BorderBrush="{x:Null}" TextAlignment="Right" SelectionOpacity="0" IsTabStop="False" IsUndoEnabled="False" IsReadOnly="True" />
+        <TextBox x:Name="EZWin" HorizontalAlignment="Left" Height="22" Margin="96,458,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AllowDrop="False" MaxLines="1" Grid.Column="1" MaxLength="9" BorderBrush="{x:Null}" TextAlignment="Right" SelectionOpacity="0" IsTabStop="False" IsUndoEnabled="False" IsReadOnly="True" />
+        <Label x:Name="lblEZWin" Content="Energiezellen" Grid.Column="1" HorizontalAlignment="Left" Margin="11,456,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
     </Grid>
 </Window>

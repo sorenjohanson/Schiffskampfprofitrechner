@@ -4,7 +4,6 @@ using System.Linq;
 using System.Windows.Controls;
 using System.Collections.Generic;
 using System.Windows.Media;
-using System;
 
 namespace SKPR
 {
@@ -32,8 +31,6 @@ namespace SKPR
                 string[] splitLine = line.Split('.');
                 string shipName = splitLine[0];
                 int[] shipRes = splitLine[1].Split(',').Select(int.Parse).ToArray();
-                foreach (int res in shipRes)
-                    Console.WriteLine("Resource: " + res.ToString() + " ship: " + shipName + " Faction: " + faction.Name);
                 string shipFaction = splitLine[2];
                 if (shipFaction == faction.Name)
                 {
@@ -75,50 +72,21 @@ namespace SKPR
             List<int> resWin = new List<int> { };
             foreach (string res in resources)
             {
-                // Late to the party workaround because this is primarily for Salvage + other Res,
-                // .. but Credits needs to be in array.
-                if (res != "Creds")
-                {
-                    // Loop through each individual resource, adding together the same resource
-                    // .. from both Salvage and other gained Resources.
-                    TextBox TFtxt = (TextBox)FindName(("TF" + res));
-                    TextBox Restxt = (TextBox)FindName(("Res" + res));
+                // Loop through each individual resource, adding together the same resource
+                // .. from both Salvage and other gained Resources.
+                TextBox TFtxt = (TextBox)FindName(("TF" + res));
+                TextBox Restxt = (TextBox)FindName(("Res" + res));
 
-                    // Add to returned List<int>
-                    resWin.Add(int.Parse(TFtxt.Text) + int.Parse(Restxt.Text));
-                }
-                else if (res == "Creds")
-                    resWin.Add(0);
+                // Add to returned List<int>
+                resWin.Add(int.Parse(TFtxt.Text) + int.Parse(Restxt.Text));
             }
             return resWin;
         }
 
         public List<int> CalculateShipLosses(Faction faction)
         {
-            // There are only a total of five resources.
-            // We have to define the List already to make use of shipLoss.Insert() proper
-            List<int> shipLoss = new List<int> { 0, 0, 0, 0, 0 };
-            // There are 14 TextBoxes, txtShip1-txtShip14, so we iterate through all
-            for (int i = 1; i <= 14; i++)
-            {
-                // Find TextBox and the amount.
-                TextBox shipBox = (TextBox)FindName(("txtShip" + i));
-                int shipAmount = int.Parse(shipBox.Text);
-                //Console.WriteLine("Amount: " + shipAmount.ToString());
-                if (shipAmount > 0)
-                {
-                    // We take resource value from current ship, iterate through all (total of 5)
-                    // .. and insert the multiplied value at the proper spot
-                    Ship currentShip = faction.Ships[i];
-                    int[] shipRes = currentShip.Resources;
-                    for (int r = 0; r < shipRes.Count(); r++)
-                    {
-                        int currentRes = shipRes[r];
-                        //Console.WriteLine("Current Resource: " + currentRes.ToString() + "inserted at range: " + r.ToString());
-                        shipLoss.Insert(r, (currentRes * shipAmount));
-                    }
-                }
-            }
+            List<int> shipLoss = new List<int> { };
+
             return shipLoss;
         }
 
@@ -141,33 +109,22 @@ namespace SKPR
         {
             // Since Labels and TextBoxes have a Resource Identifier, we use resouces string[] to 
             // identify all relevant labels + textboxes and set them to be visible.
-            string[] resources = { "Dura", "Tiba", "Kris", "Creds", "EZ" };
+            string[] resources = { "Dura", "Tiba", "Kris", "EZ" };
             lblProfit.Visibility = Visibility.Visible; // This is a message label that tells end user the program is working.
             List<int> shipLosses = CalculateShipLosses(ReturnFaction(cBoxFaction.SelectedItem.ToString()));
             List<int> resProfit = CalculateResources(resources);
-            
-            // At this final stage, we take the profit from gained resources
-            // .. and subtract that from ship losses.
-            // Final result will be total profit.
-            for (int i = 0; i < 5; i++)
-            {
-                int currentRes = resProfit[i];
-                int currentShipLoss = shipLosses[i];
-                TextBox currentResBox = (TextBox)FindName((resources[i] + "Win"));
-                currentResBox.Text = (currentRes - currentShipLoss).ToString();
-                if (int.Parse(currentResBox.Text) >= 0)
-                    currentResBox.Foreground = Brushes.Green;
-                else
-                    currentResBox.Foreground = Brushes.Red;
-            }
-            // Reveal labels and textboxes, hide message
             lblProfit.Visibility = Visibility.Hidden;
+
             foreach (string res in resources)
             {
+                // Activate Labels and Textboxes
                 Label lbl = (Label)FindName(("lbl" + res + "Win"));
                 TextBox winBox = (TextBox)FindName((res + "Win"));
                 lbl.Visibility = Visibility.Visible;
                 winBox.Visibility = Visibility.Visible;
+            }
+            for (int i = 0; i < resources.Count(); i++)
+            {
             }
         }
     }
