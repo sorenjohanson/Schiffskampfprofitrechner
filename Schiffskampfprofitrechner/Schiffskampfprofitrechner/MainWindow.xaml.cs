@@ -97,17 +97,17 @@ namespace SKPR
             // We have to define the List already to make use of shipLoss.Insert() proper
             List<int> shipLoss = new List<int> { 0, 0, 0, 0, 0 };
             // There are 14 TextBoxes, txtShip1-txtShip14, so we iterate through all
-            for (int i = 1; i <= 14; i++)
+            for (int i = 0; i < 14; i++)
             {
                 // Find TextBox and the amount.
-                TextBox shipBox = (TextBox)FindName(("txtShip" + i));
+                TextBox shipBox = (TextBox)FindName(("txtShip" + (i - 1)));
                 int shipAmount = int.Parse(shipBox.Text);
                 //Console.WriteLine("Amount: " + shipAmount.ToString());
                 if (shipAmount > 0)
                 {
                     // We take resource value from current ship, iterate through all (total of 5)
                     // .. and insert the multiplied value at the proper spot
-                    Ship currentShip = faction.Ships[i - 1];
+                    Ship currentShip = faction.Ships[i];
                     int[] shipRes = currentShip.Resources; // - At this point, resources are more than doubled.
                     for (int r = 0; r < shipRes.Count(); r++)
                     {
