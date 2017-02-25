@@ -32,8 +32,6 @@ namespace SKPR
                 string[] splitLine = line.Split('.');
                 string shipName = splitLine[0];
                 int[] shipRes = splitLine[1].Split(',').Select(int.Parse).ToArray();
-                foreach (int res in shipRes)
-                    Console.WriteLine("Resource: " + res.ToString() + " ship: " + shipName + " Faction: " + faction.Name);
                 string shipFaction = splitLine[2];
                 if (shipFaction == faction.Name)
                 {
@@ -109,8 +107,8 @@ namespace SKPR
                 {
                     // We take resource value from current ship, iterate through all (total of 5)
                     // .. and insert the multiplied value at the proper spot
-                    Ship currentShip = faction.Ships[i];
-                    int[] shipRes = currentShip.Resources;
+                    Ship currentShip = faction.Ships[i - 1];
+                    int[] shipRes = currentShip.Resources; // - At this point, resources are more than doubled.
                     for (int r = 0; r < shipRes.Count(); r++)
                     {
                         int currentRes = shipRes[r];
@@ -142,8 +140,9 @@ namespace SKPR
             // Since Labels and TextBoxes have a Resource Identifier, we use resouces string[] to 
             // identify all relevant labels + textboxes and set them to be visible.
             string[] resources = { "Dura", "Tiba", "Kris", "Creds", "EZ" };
+            Faction currentFaction = ReturnFaction(cBoxFaction.SelectedItem.ToString());
             lblProfit.Visibility = Visibility.Visible; // This is a message label that tells end user the program is working.
-            List<int> shipLosses = CalculateShipLosses(ReturnFaction(cBoxFaction.SelectedItem.ToString()));
+            List<int> shipLosses = CalculateShipLosses(currentFaction);
             List<int> resProfit = CalculateResources(resources);
             
             // At this final stage, we take the profit from gained resources
