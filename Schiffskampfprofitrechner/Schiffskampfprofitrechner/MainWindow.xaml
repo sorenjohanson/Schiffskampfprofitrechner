@@ -17,7 +17,7 @@
             <ComboBoxItem Content="Rebellion" BorderBrush="{x:Null}" Background="White" Foreground="Black" IsSelected="True"/>
             <ComboBoxItem Content="Imperium" BorderBrush="{x:Null}" Background="White" Foreground="Black"/>
         </ComboBox>
-        <Label x:Name="lblSchiffe" Content="Schiffe" HorizontalAlignment="Left" Margin="80,35,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="lblSchiffe" Content="Verlorene Schiffe" HorizontalAlignment="Left" Margin="71,35,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label x:Name="lblShip1" Content="" HorizontalAlignment="Left" Margin="105,94,0,0" VerticalAlignment="Top" Width="170" Grid.ColumnSpan="2"/>
         <Label x:Name="lblShip2" Content="" HorizontalAlignment="Left" Margin="105,120,0,0" VerticalAlignment="Top" Width="170" Grid.ColumnSpan="2"/>
         <Label x:Name="lblShip3" Content="" HorizontalAlignment="Left" Margin="105,146,0,0" VerticalAlignment="Top" Width="170" Grid.ColumnSpan="2"/>
