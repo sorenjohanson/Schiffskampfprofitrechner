@@ -100,7 +100,7 @@ namespace SKPR
             for (int i = 0; i < 14; i++)
             {
                 // Find TextBox and the amount.
-                TextBox shipBox = (TextBox)FindName(("txtShip" + (i - 1)));
+                TextBox shipBox = (TextBox)FindName(("txtShip" + (i + 1)));
                 int shipAmount = int.Parse(shipBox.Text);
                 //Console.WriteLine("Amount: " + shipAmount.ToString());
                 if (shipAmount > 0)
