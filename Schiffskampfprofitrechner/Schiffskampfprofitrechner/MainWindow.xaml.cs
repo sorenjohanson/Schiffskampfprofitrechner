@@ -59,16 +59,29 @@ namespace SKPR
             return Imperium;
         }
 
+        public int[] CalculateProfit()
+        {
+            int[] profit = { };
+            return profit;
+        }
+
         public MainWindow()
         {
             InitializeComponent();
             InitializeFaction(Imperium);
             InitializeFaction(Rebellion);
+            UpdateText(ReturnFaction(cBoxFaction.SelectedItem.ToString()));
         }
 
         private void cBoxFaction_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             UpdateText(ReturnFaction(cBoxFaction.SelectedItem.ToString()));
+        }
+
+        private void btnBerechnen_Click(object sender, RoutedEventArgs e)
+        {
+            lblProfit.Visibility = Visibility.Visible;
+
         }
     }
 }

@@ -1,0 +1,2 @@
+ships max value 9.999.999
+resources max value 999.999.999
