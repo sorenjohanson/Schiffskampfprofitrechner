@@ -5,6 +5,7 @@ using System.Windows.Controls;
 using System.Collections.Generic;
 using System.Windows.Media;
 using System;
+using Newtonsoft.Json;
 
 namespace SKPR
 {
@@ -26,17 +27,13 @@ namespace SKPR
             StreamReader shipReadout = new StreamReader("data/ShipReadouts.txt");
             while ((line = shipReadout.ReadLine()) != null)
             {
-                // Data structure:
-                // Ship Name.Ship Resources.Ship Faction
-                // We split according to data structure, convert as needed.
-                string[] splitLine = line.Split('.');
-                string shipName = splitLine[0];
-                int[] shipRes = splitLine[1].Split(',').Select(int.Parse).ToArray();
-                string shipFaction = splitLine[2];
-                if (shipFaction == faction.Name)
+                // Data structure (now using JSON):
+                // "name", "resources", "faction"
+                Ship currShip = JsonConvert.DeserializeObject<Ship>(line);
+                if (currShip.Faction == faction.Name)
                 {
                     // add this new ship to faction.Ships
-                    faction.Ships.Add(new Ship(shipName, shipRes, shipFaction));
+                    faction.Ships.Add(currShip);
                 }
             }
             // Close StreamReader
