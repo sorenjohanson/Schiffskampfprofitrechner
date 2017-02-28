@@ -103,6 +103,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="data\icons_faction_imp.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\icons_faction_reb.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="data\ShipReadouts.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
