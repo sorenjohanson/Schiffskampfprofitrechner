@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Windows.Media;
 using System;
 using Newtonsoft.Json;
+using System.Windows.Media.Imaging;
 
 namespace SKPR
 {
@@ -31,10 +32,8 @@ namespace SKPR
                 // "name", "resources", "faction"
                 Ship currShip = JsonConvert.DeserializeObject<Ship>(line);
                 if (currShip.Faction == faction.Name)
-                {
                     // add this new ship to faction.Ships
                     faction.Ships.Add(currShip);
-                }
             }
             // Close StreamReader
             shipReadout.Close();
@@ -43,10 +42,10 @@ namespace SKPR
         public void UpdateText(Faction faction)
         {
             // This updates all labels (named lblShip1 to lblShip14) to include Ship name.
-            for (int i = 1; i <= faction.Ships.Count; i++)
+            for (int i = 0; i < faction.Ships.Count; i++)
             {
-                Label lbl = (Label)FindName(("lblShip" + i));
-                lbl.Content = faction.Ships[i - 1].Name;
+                Label lbl = (Label)FindName(("lblShip" + (i + 1)));
+                lbl.Content = faction.Ships[i].Name;
             }
         }
 
@@ -79,6 +78,12 @@ namespace SKPR
                     TextBox TFtxt = (TextBox)FindName(("TF" + res));
                     TextBox Restxt = (TextBox)FindName(("Res" + res));
 
+                    // If nothing in text box, enter 0 so int.Parse doesn't freak out.
+                    if (string.IsNullOrWhiteSpace(TFtxt.Text))
+                        TFtxt.Text = "0";
+                    if (string.IsNullOrWhiteSpace(Restxt.Text))
+                        Restxt.Text = "0";
+
                     // Add to returned List<int>
                     resWin.Add(int.Parse(TFtxt.Text) + int.Parse(Restxt.Text));
                 }
@@ -99,13 +104,18 @@ namespace SKPR
                 // Find TextBox and the amount.
                 TextBox shipBox = (TextBox)FindName(("txtShip" + (i + 1)));
                 int shipAmount = 0;
+
+                // If nothing in text box, enter 0 so int.Parse doesn't freak out.
+                if (string.IsNullOrWhiteSpace(shipBox.Text))
+                    shipBox.Text = "0";
+
                 bool errHandler = int.TryParse(shipBox.Text, out shipAmount);
                 if (!errHandler)
                 {
                     MessageBox.Show("Schiffsanzahl konnte nicht konvertiert werden!", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
                     break;
                 }
-                //Console.WriteLine("Amount: " + shipAmount.ToString());
+
                 if (shipAmount > 0)
                 {
                     // We take resource value from current ship, iterate through all (total of 5)
@@ -135,7 +145,8 @@ namespace SKPR
         private void cBoxFaction_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             // Updates labels.
-            UpdateText(ReturnFaction(cBoxFaction.SelectedItem.ToString()));
+            Faction f = ReturnFaction(cBoxFaction.SelectedItem.ToString());
+            UpdateText(f);
         }
 
         private void btnBerechnen_Click(object sender, RoutedEventArgs e)
@@ -162,6 +173,7 @@ namespace SKPR
                 else
                     currentResBox.Foreground = Brushes.Red;
             }
+
             // Reveal labels and textboxes, hide message
             lblProfit.Visibility = Visibility.Hidden;
             foreach (string res in resources)
