@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SKPR"
         mc:Ignorable="d"
-        Title="Schiffskampfprofitrechner" Height="530" Width="531.5" IsTabStop="False" ResizeMode="CanMinimize">
+        Title="Schiffskampfprofitrechner" Height="565" Width="531.5" IsTabStop="False" ResizeMode="CanMinimize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="137*"/>
@@ -74,7 +74,11 @@
         <TextBox x:Name="TibaWin" HorizontalAlignment="Left" Height="22" Margin="96,381,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AllowDrop="False" MaxLines="1" Grid.Column="1" MaxLength="9" BorderBrush="{x:Null}" TextAlignment="Right" SelectionOpacity="0" IsTabStop="False" IsUndoEnabled="False" IsReadOnly="True" />
         <TextBox x:Name="KrisWin" HorizontalAlignment="Left" Height="22" Margin="96,406,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AllowDrop="False" MaxLines="1" Grid.Column="1" MaxLength="9" BorderBrush="{x:Null}" TextAlignment="Right" SelectionOpacity="0" IsTabStop="False" IsUndoEnabled="False" IsReadOnly="True"/>
         <TextBox x:Name="CredsWin" HorizontalAlignment="Left" Height="22" Margin="96,432,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AllowDrop="False" MaxLines="1" Grid.Column="1" MaxLength="9" BorderBrush="{x:Null}" TextAlignment="Right" SelectionOpacity="0" IsTabStop="False" IsUndoEnabled="False" IsReadOnly="True" />
-        <TextBox x:Name="EZWin" HorizontalAlignment="Left" Height="22" Margin="96,458,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AllowDrop="False" MaxLines="1" Grid.Column="1" MaxLength="9" BorderBrush="{x:Null}" TextAlignment="Right" SelectionOpacity="0" IsTabStop="False" IsUndoEnabled="False" IsReadOnly="True" />
+        <TextBox x:Name="EZWin" HorizontalAlignment="Left" Height="22" Margin="96,458,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AllowDrop="False" MaxLines="1" Grid.Column="1" MaxLength="9" BorderBrush="{x:Null}" TextAlignment="Right" SelectionOpacity="0" IsTabStop="False" IsUndoEnabled="False" IsReadOnly="True" Background="White" />
         <Label x:Name="lblEZWin" Content="Energiezellen" Grid.Column="1" HorizontalAlignment="Left" Margin="11,456,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <TextBox x:Name="txtTravelCost" HorizontalAlignment="Left" Height="22" Margin="10,460,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" TextAlignment="Right" MaxLines="1" MaxLength="9" IsUndoEnabled="False"/>
+        <Label x:Name="lblTravelCost" Content="Reisekosten (Tibannagas)" HorizontalAlignment="Left" Margin="105,457,0,0" VerticalAlignment="Top" Width="170" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblPercentage" Content="Profit in %" Grid.Column="1" HorizontalAlignment="Left" Margin="11,482,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <TextBox x:Name="PctWin" HorizontalAlignment="Left" Height="22" Margin="96,484,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AllowDrop="False" MaxLines="1" Grid.Column="1" MaxLength="9" BorderBrush="{x:Null}" TextAlignment="Right" SelectionOpacity="0" IsTabStop="False" IsUndoEnabled="False" IsReadOnly="True" />
     </Grid>
 </Window>
