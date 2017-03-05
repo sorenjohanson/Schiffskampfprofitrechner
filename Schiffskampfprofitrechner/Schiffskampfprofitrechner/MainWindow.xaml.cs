@@ -133,6 +133,17 @@ namespace SKPR
             return shipLoss;
         }
 
+        public void CalculatePercentage(TextBox perc, int win, int loss)
+        {
+            // This calculates loss/profit in percentage
+            int difference = ((win - loss) * 100) / loss;
+            if (difference < 0)
+                perc.Foreground = Brushes.Red;
+            else 
+                perc.Foreground = Brushes.Green;
+            perc.Text = difference.ToString() + "%";
+        }
+
         public MainWindow()
         {
             // Initializes both factions, then updates labels.
@@ -158,6 +169,13 @@ namespace SKPR
             lblProfit.Visibility = Visibility.Visible; // This is a message label that tells end user the program is working.
             List<int> shipLosses = CalculateShipLosses(currentFaction);
             List<int> resProfit = CalculateResources(resources);
+            TextBox txtTravel = (TextBox)FindName("txtTravelCost");
+            if (string.IsNullOrWhiteSpace(txtTravel.Text))
+                txtTravel.Text = "0";
+            int travelCost = int.Parse(txtTravel.Text);
+            // These 2 are important for percentage later
+            int win = 0;
+            int losses = travelCost;
             
             // At this final stage, we take the profit from gained resources
             // .. and subtract that from ship losses.
@@ -165,9 +183,17 @@ namespace SKPR
             for (int i = 0; i < 5; i++)
             {
                 int currentRes = resProfit[i];
+                win += currentRes;
                 int currentShipLoss = shipLosses[i];
+                losses += currentShipLoss;
                 TextBox currentResBox = (TextBox)FindName((resources[i] + "Win"));
-                currentResBox.Text = (currentRes - currentShipLoss).ToString();
+                // If Tibannagas is calculated, subtract Travel cost
+                if (currentResBox == TibaWin)
+                    currentResBox.Text = (currentRes - currentShipLoss - travelCost).ToString();
+                // Otherwise continue as normal
+                else
+                    currentResBox.Text = (currentRes - currentShipLoss).ToString();
+                // Make the text green if profit, red if not
                 if (int.Parse(currentResBox.Text) >= 0)
                     currentResBox.Foreground = Brushes.Green;
                 else
@@ -183,6 +209,11 @@ namespace SKPR
                 lbl.Visibility = Visibility.Visible;
                 winBox.Visibility = Visibility.Visible;
             }
+            Label lblPercent = (Label)FindName("lblPercentage");
+            TextBox txtPctWin = (TextBox)FindName("PctWin");
+            lblPercent.Visibility = Visibility.Visible;
+            txtPctWin.Visibility = Visibility.Visible;
+            CalculatePercentage(txtPctWin, win, losses);
         }
     }
 }
